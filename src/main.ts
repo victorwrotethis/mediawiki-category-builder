@@ -27,6 +27,16 @@ async function loadCategoryData(searchInput: HTMLInputElement, resultContainer: 
   }
 }
 
+function createResultCard(foundItemName: string){
+  return` <div class="result-card" id="clickable-card-${foundItemName}" title="Click to add to saved list">
+      <div class="result-item">
+      <span style="color:green;font-size:18pt">&#x002B;</span>
+        ${foundItemName}              
+      </div>
+    </div>
+  `
+}
+
 function handleSearch(event: Event, resultContainer: HTMLElement, savedListContainerElement: HTMLElement) {
   const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
 
@@ -34,55 +44,55 @@ function handleSearch(event: Event, resultContainer: HTMLElement, savedListConta
     resultContainer.innerHTML = '<p class="message">Ready. Start typing to search...</p>';
     return;
   }
+  let foundItems: string[] = [];
 
-  const foundItem = categoryData.query.allcategories.find(categoryListing => {
-    return (
-      categoryListing.category.toLowerCase().includes(searchTerm)
-    );
+  categoryData.query.allcategories.find(categoryListing => {
+    if(categoryListing.category.toLowerCase().includes(searchTerm)){
+      foundItems.push(categoryListing.category)
+    }
+    if(foundItems.length > 4){
+      return true;
+    }
   });
 
-  // 5 max maybe?
-
-  if (foundItem) {
-    resultContainer.innerHTML = `
-          <div class="result-card" id="clickable-card" title="Click to add to saved list">
-            <div class="result-item">
-            <span style="color:green;font-size:18pt">&#x002B;</span>
-               ${foundItem.category}              
-            </div>
-          </div>
-        `;
-
-    document.getElementById('clickable-card')! //extract name
+  if (foundItems.length != 0) {
+    let resultHTML = '';
+    foundItems.forEach((foundItemName)=>{
+      resultHTML = resultHTML.concat(createResultCard(foundItemName));
+    })
+    resultContainer.innerHTML = resultHTML
+    foundItems.forEach((foundItemName)=>{
+      document.getElementById(`clickable-card-${foundItemName}`)! //extract name
       .addEventListener('click', () => {
-        saveCategory(savedListContainerElement, foundItem)
+        saveCategory(savedListContainerElement, foundItemName)
       });
+    })
   } else {
     resultContainer.innerHTML = `<p class="message">No matching category found.</p>`;
   }
 }
 
-function saveCategory(savedListContainer: HTMLElement, foundItem: WikiCategory) {
+function saveCategory(savedListContainer: HTMLElement, foundItem: string) {
   const emptyListMsg = document.getElementById('empty-list-msg')!; //extract name
   if (!foundItem) return;
-  if (savedCategories.has(foundItem.category)) {
-    alert(`${foundItem.category} is already in your saved list.`);
+  if (savedCategories.has(foundItem)) {
+    alert(`${foundItem} is already in your saved list.`);
     return;
   }
   if (savedCategories.size === 0) {
     emptyListMsg.style.display = 'none';
   }
-  savedCategories.add(foundItem.category);
+  savedCategories.add(foundItem);
   const li = document.createElement('li');
   li.className = 'saved-list-item';
   li.innerHTML = `
     <div>
-      <strong>${foundItem.category}</strong>
+      <strong>${foundItem}</strong>
       <span style="color:red;font-size:11pt"> &#x274c;</span>
     </div>
   `;
 
-  li.addEventListener('click', () => { deleteCategory(emptyListMsg, li, foundItem.category) })
+  li.addEventListener('click', () => { deleteCategory(emptyListMsg, li, foundItem) })
   savedListContainer.appendChild(li);
   updateQueryResult();
 }
