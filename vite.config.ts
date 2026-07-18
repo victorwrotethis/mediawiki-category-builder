@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     base: '/mediawiki-category-builder/',
     build: {
-        outDir: '../dist',
         emptyOutDir: true,
         assetsDir: 'assets',
     }
