@@ -14,7 +14,7 @@ async function loadCategoryData(searchInput: HTMLInputElement, resultContainer: 
     const requestHeaders: HeadersInit = new Headers();
     requestHeaders.set('Access-Control-Allow-Origin', '*');
     const response = await fetch(categoriesUrl, {
-        headers: requestHeaders
+      headers: requestHeaders
     });
     if (!response.ok) throw new Error(`Well I warned ya. Error! Status: ${response.status}`);
 
@@ -52,11 +52,11 @@ function handleSearch(event: Event, resultContainer: HTMLElement, savedListConta
             </div>
           </div>
         `;
-        
+
     document.getElementById('clickable-card')! //extract name
-    .addEventListener('click', () => {
-      saveCategory(savedListContainerElement, foundItem)
-    });
+      .addEventListener('click', () => {
+        saveCategory(savedListContainerElement, foundItem)
+      });
   } else {
     resultContainer.innerHTML = `<p class="message">No matching category found.</p>`;
   }
@@ -109,15 +109,15 @@ function updateQueryResult() {
 }
 
 function setupCopyURL(element: HTMLButtonElement) {
-    element.addEventListener('click', ()=>{
-        const queryResult = document.getElementById(queryResultElement) as HTMLInputElement;
-        if (queryResult.value == queryResultEmptyMessage || queryResult.value == '') {
-            queryResult.value = 'There is nothing to copy, add categories first.';
-        } else {
-            navigator.clipboard.writeText(queryResult.value);
-            queryResult.value = "Copied!";
-        }
-    });
+  element.addEventListener('click', () => {
+    const queryResult = document.getElementById(queryResultElement) as HTMLInputElement;
+    if (queryResult.value == queryResultEmptyMessage || queryResult.value == '') {
+      queryResult.value = 'There is nothing to copy, add categories first.';
+    } else {
+      navigator.clipboard.writeText(queryResult.value);
+      queryResult.value = "Copied!";
+    }
+  });
 }
 
 function appendedCategories() {
@@ -163,11 +163,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 addEventListener("load", () => {
-    const searchInputElement = document.getElementById(searchInput)!;
-    const resultContainerElement = document.getElementById(resultContainer)!;
-    const savedListContainerElement = document.getElementById(savedListContainer)!;
-    loadCategoryData(searchInputElement as HTMLInputElement, resultContainerElement);
-    searchInputElement.addEventListener('input', (event) => { handleSearch(event, resultContainerElement, savedListContainerElement) });
+  const searchInputElement = document.getElementById(searchInput)!;
+  const resultContainerElement = document.getElementById(resultContainer)!;
+  const savedListContainerElement = document.getElementById(savedListContainer)!;
+  loadCategoryData(searchInputElement as HTMLInputElement, resultContainerElement);
+  searchInputElement.addEventListener('input', (event) => { handleSearch(event, resultContainerElement, savedListContainerElement) });
 })
 
 setupCopyURL(document.querySelector<HTMLButtonElement>('#action-button')!)
