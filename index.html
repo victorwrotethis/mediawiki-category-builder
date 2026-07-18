@@ -1,43 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON to HTML Table</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-</head>
-
-<body>
-
-    <h1>Category Search</h1>
-
-    <h2>Wiki Inputs</h2>
-    <div class="search-container" id="query-bit">
-        <button type="button" id="action-button" class="action-btn" onclick="copyURL()">
-            <span>&#128203;</span>
-        </button>
-        <input type="text" id="query-result" class="query-box"
-            placeholder="Start adding categories to view the result URL" disabled>
-    </div>
-
-    <div id="search-bit">
-        <h2>Search Category</h2>
-        <input type="text" id="search-input" class="search-box" placeholder="Type a name to search..." disabled>
-    </div>
-
-    <div id="result-container">
-        <p class="message">Loading data file...</p>
-    </div>
-
-    <div class="column">
-        <h2>Selected Categories</h2>
-        <ul id="saved-list-container" class="saved-list">
-            <p class="message" id="empty-list-msg">No members saved yet.</p>
-        </ul>
-    </div>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
