@@ -44,7 +44,7 @@ function handleSearch(event, resultContainer, savedListContainer) {
       saveCategory(savedListContainer, foundItem)
     });
   } else {
-    resultContainer.innerHTML = `<p class="message">No matching user found.</p>`;
+    resultContainer.innerHTML = `<p class="message">No matching category found.</p>`;
   }
 }
 
@@ -114,7 +114,7 @@ function appendedCategories() {
 }
 
 function createCategoryQuery(categoryName) {
-  return `%22%5B%5BCategory%3A${categoryName}%5D%5D%22+`
+  return `%22%5B%5BCategory%3A${categoryName.replaceAll(" ", "_")}%5D%5D%22+`
 }
 
 addEventListener("load", (event) => {
