@@ -1,0 +1,511 @@
+{
+    "batchcomplete": true,
+    "query": {
+        "allcategories": [
+            {
+                "category": "Asset Development"
+            },
+            {
+                "category": "Asset Guidelines"
+            },
+            {
+                "category": "Asset Tutorials"
+            },
+            {
+                "category": "Ayleids"
+            },
+            {
+                "category": "Bjoulsae River Tribes"
+            },
+            {
+                "category": "Black Marsh"
+            },
+            {
+                "category": "Bretons"
+            },
+            {
+                "category": "Categories"
+            },
+            {
+                "category": "Chimeri-Quey"
+            },
+            {
+                "category": "Clothing"
+            },
+            {
+                "category": "Clothing Catalogues"
+            },
+            {
+                "category": "Common"
+            },
+            {
+                "category": "Concept Art"
+            },
+            {
+                "category": "Creatures"
+            },
+            {
+                "category": "Culture"
+            },
+            {
+                "category": "Cultures"
+            },
+            {
+                "category": "Cyrodiil"
+            },
+            {
+                "category": "Cyrodiil Creatures"
+            },
+            {
+                "category": "Cyrodiil Factions"
+            },
+            {
+                "category": "Cyrodiil Ingredients"
+            },
+            {
+                "category": "Cyrodiil Places"
+            },
+            {
+                "category": "Daedra"
+            },
+            {
+                "category": "Daggerfall"
+            },
+            {
+                "category": "Direnni"
+            },
+            {
+                "category": "Direnni Ruins"
+            },
+            {
+                "category": "Dragons"
+            },
+            {
+                "category": "Dungeons"
+            },
+            {
+                "category": "Dungeons (Black Marsh)"
+            },
+            {
+                "category": "Dungeons (Cyrodiil)"
+            },
+            {
+                "category": "Dungeons (Hammerfell)"
+            },
+            {
+                "category": "Dungeons (High Rock)"
+            },
+            {
+                "category": "Dungeons (Morrowind)"
+            },
+            {
+                "category": "Dungeons (Skyrim)"
+            },
+            {
+                "category": "Elsweyr"
+            },
+            {
+                "category": "Elsweyr Culture"
+            },
+            {
+                "category": "Elsweyr Factions"
+            },
+            {
+                "category": "Elsweyr History"
+            },
+            {
+                "category": "Elsweyr Language"
+            },
+            {
+                "category": "Elsweyr People"
+            },
+            {
+                "category": "Elsweyr Religion"
+            },
+            {
+                "category": "Elsweyr Settlements"
+            },
+            {
+                "category": "Evermore"
+            },
+            {
+                "category": "Expansions (High Rock 427)"
+            },
+            {
+                "category": "ExpensiveItem"
+            },
+            {
+                "category": "Exterior Claims"
+            },
+            {
+                "category": "Exterior Guidelines"
+            },
+            {
+                "category": "Exterior Tutorials"
+            },
+            {
+                "category": "Eye of Argonia"
+            },
+            {
+                "category": "Factions"
+            },
+            {
+                "category": "Factions (Cyrodiil)"
+            },
+            {
+                "category": "Factions (Hammerfell)"
+            },
+            {
+                "category": "Factions (High Rock)"
+            },
+            {
+                "category": "Factions (Morrowind)"
+            },
+            {
+                "category": "Factions (Padomaic Isles)"
+            },
+            {
+                "category": "Factions (Skyrim)"
+            },
+            {
+                "category": "Fey"
+            },
+            {
+                "category": "Flora"
+            },
+            {
+                "category": "Formatting templates"
+            },
+            {
+                "category": "Giants"
+            },
+            {
+                "category": "Gwylim"
+            },
+            {
+                "category": "Hammerfell"
+            },
+            {
+                "category": "High Rock"
+            },
+            {
+                "category": "High Rock 427"
+            },
+            {
+                "category": "High Rock Creatures"
+            },
+            {
+                "category": "High Rock Cultures"
+            },
+            {
+                "category": "High Rock Dungeons"
+            },
+            {
+                "category": "High Rock Factions"
+            },
+            {
+                "category": "High Rock Literature"
+            },
+            {
+                "category": "High Rock Mages Guild"
+            },
+            {
+                "category": "High Rock NPCs"
+            },
+            {
+                "category": "High Rock Religion"
+            },
+            {
+                "category": "High Rock Settlements"
+            },
+            {
+                "category": "High Rock Timeline"
+            },
+            {
+                "category": "History"
+            },
+            {
+                "category": "Images - Locations"
+            },
+            {
+                "category": "Ingredients"
+            },
+            {
+                "category": "Interior Claims"
+            },
+            {
+                "category": "Interior Guidelines"
+            },
+            {
+                "category": "Interior Tutorials"
+            },
+            {
+                "category": "Jehanna"
+            },
+            {
+                "category": "Landmarks (Skyrim)"
+            },
+            {
+                "category": "Language"
+            },
+            {
+                "category": "Literature"
+            },
+            {
+                "category": "Meridia"
+            },
+            {
+                "category": "Modding"
+            },
+            {
+                "category": "Modding Guidelines"
+            },
+            {
+                "category": "Modding Tools"
+            },
+            {
+                "category": "Modding Tutorials"
+            },
+            {
+                "category": "Morrowind"
+            },
+            {
+                "category": "Mountains (Skyrim)"
+            },
+            {
+                "category": "NPCs"
+            },
+            {
+                "category": "Namira"
+            },
+            {
+                "category": "Northpoint"
+            },
+            {
+                "category": "Orcs"
+            },
+            {
+                "category": "Orsimer"
+            },
+            {
+                "category": "Orsinium"
+            },
+            {
+                "category": "Ostern"
+            },
+            {
+                "category": "Padomaic Isles"
+            },
+            {
+                "category": "Padomaic Isles Expansions"
+            },
+            {
+                "category": "Pages with DRUID infoboxes"
+            },
+            {
+                "category": "Pages with ignored display titles"
+            },
+            {
+                "category": "People"
+            },
+            {
+                "category": "Places"
+            },
+            {
+                "category": "Places (Cyrodiil)"
+            },
+            {
+                "category": "Places (Hammerfell)"
+            },
+            {
+                "category": "Places (High Rock)"
+            },
+            {
+                "category": "Places (Morrowind)"
+            },
+            {
+                "category": "Places (Skyrim)"
+            },
+            {
+                "category": "Project Cyrodiil"
+            },
+            {
+                "category": "Project Cyrodiil Expansions"
+            },
+            {
+                "category": "Project Hammerfell"
+            },
+            {
+                "category": "Project Hammerfell Expansions"
+            },
+            {
+                "category": "Project Summerset"
+            },
+            {
+                "category": "Province: Cyrodiil"
+            },
+            {
+                "category": "Province: Cyrodiil Expansions"
+            },
+            {
+                "category": "Province Mod Expansions"
+            },
+            {
+                "category": "Province Mods"
+            },
+            {
+                "category": "Provinces"
+            },
+            {
+                "category": "Pyandonea"
+            },
+            {
+                "category": "Quest and NPC Claims"
+            },
+            {
+                "category": "Quest and NPC Guidelines"
+            },
+            {
+                "category": "Quest and NPC Tutorials"
+            },
+            {
+                "category": "Reachmen"
+            },
+            {
+                "category": "Regions"
+            },
+            {
+                "category": "Regions (Black Marsh)"
+            },
+            {
+                "category": "Regions (Cyrodiil)"
+            },
+            {
+                "category": "Regions (Elsweyr)"
+            },
+            {
+                "category": "Regions (Hammerfell)"
+            },
+            {
+                "category": "Regions (High Rock)"
+            },
+            {
+                "category": "Regions (Morrowind)"
+            },
+            {
+                "category": "Regions (Padomaic Isles)"
+            },
+            {
+                "category": "Regions (Skyrim)"
+            },
+            {
+                "category": "Regions (Valenwood)"
+            },
+            {
+                "category": "Religion"
+            },
+            {
+                "category": "Religion (Cyrodiil)"
+            },
+            {
+                "category": "Scripting"
+            },
+            {
+                "category": "Settlements"
+            },
+            {
+                "category": "Settlements (Cyrodiil)"
+            },
+            {
+                "category": "Settlements (Hammerfell)"
+            },
+            {
+                "category": "Settlements (High Rock)"
+            },
+            {
+                "category": "Settlements (Morrowind)"
+            },
+            {
+                "category": "Settlements (Skyrim)"
+            },
+            {
+                "category": "Shornhelm"
+            },
+            {
+                "category": "Site Information"
+            },
+            {
+                "category": "Skillbooks"
+            },
+            {
+                "category": "Skyrim"
+            },
+            {
+                "category": "Skyrim: Home of the Nords"
+            },
+            {
+                "category": "Skyrim: Home of the Nords Expansions"
+            },
+            {
+                "category": "Skyrim Creatures"
+            },
+            {
+                "category": "Summerset"
+            },
+            {
+                "category": "Summerset Creatures"
+            },
+            {
+                "category": "Summerset Regions"
+            },
+            {
+                "category": "Tamriel"
+            },
+            {
+                "category": "Tamriel Rebuilt"
+            },
+            {
+                "category": "Tamriel Rebuilt Expansions"
+            },
+            {
+                "category": "Thras"
+            },
+            {
+                "category": "Tilesets"
+            },
+            {
+                "category": "Tilesets (High Rock)"
+            },
+            {
+                "category": "Tilesets (Skyrim)"
+            },
+            {
+                "category": "Timeline"
+            },
+            {
+                "category": "Undead"
+            },
+            {
+                "category": "Valenwood"
+            },
+            {
+                "category": "Warp"
+            },
+            {
+                "category": "Warp Space"
+            },
+            {
+                "category": "Wars"
+            },
+            {
+                "category": "Wayrest"
+            },
+            {
+                "category": "Witches"
+            },
+            {
+                "category": "Yokuda"
+            }
+        ]
+    }
+}

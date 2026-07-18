@@ -1,0 +1,89 @@
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .query-box {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box:focus {
+      border-color: #4f46e5;
+    }
+
+    .result-card {
+      margin-top: 5px;
+      padding: 5px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      max-width: 425px;
+    }
+
+    .result-item {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .action-btn {
+      padding: 6px 12px;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: white;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .action-btn:hover {
+      background-color: rgb(216, 214, 214);
+
+    }
+
+    .action-btn:active {
+      background-color: rgb(116, 182, 96);
+    }
+
+    .action-btn:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .search-container {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      width: 100%;
+    }
