@@ -1,4 +1,4 @@
-import type { WikiCategories, WikiCategory } from './model/WikiCategories';
+import type { WikiCategories } from './model/WikiCategories';
 import './style.css'
 const categoriesUrl = new URL('/categories.json', import.meta.url).href
 
