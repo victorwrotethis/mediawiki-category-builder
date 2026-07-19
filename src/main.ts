@@ -1,6 +1,7 @@
+import { loadCategoryData } from './components/category-loader';
 import type { WikiCategories } from './model/WikiCategories';
 import './style.css'
-const categoriesUrl = new URL('/categories.json', import.meta.url).href
+
 
 let categoryData: WikiCategories;
 const savedCategories = new Set<string>();
@@ -9,23 +10,17 @@ const searchInput: string = 'search-input';
 const resultContainer: string = 'result-container';
 const savedListContainer: string = 'saved-list-container';
 
-async function loadCategoryData(searchInput: HTMLInputElement, resultContainer: HTMLElement) {
+
+export async function setupSearch(searchInput: HTMLInputElement, resultContainer: HTMLElement) {
   try {
-    const requestHeaders: HeadersInit = new Headers();
-    requestHeaders.set('Access-Control-Allow-Origin', '*');
-    const response = await fetch(categoriesUrl, {
-      headers: requestHeaders
-    });
-    if (!response.ok) throw new Error(`Well I warned ya. Error! Status: ${response.status}`);
-
-    categoryData = await response.json() as WikiCategories;
-
+    categoryData = await loadCategoryData();
     searchInput.disabled = false;
     resultContainer.innerHTML = '<p class="message">Ready. Start typing to search...</p>';
   } catch (error) {
     resultContainer.innerHTML = '<p class="message" style="color: red;">Error loading data.</p>';
   }
 }
+
 
 function createResultCard(foundItemName: string){
   return` <div class="result-card" id="clickable-card-${foundItemName}" title="Click to add to saved list">
@@ -40,6 +35,7 @@ function createResultCard(foundItemName: string){
 function handleSearch(event: Event, resultContainer: HTMLElement, savedListContainerElement: HTMLElement) {
   const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
 
+  // we do this when it's clear.
   if (searchTerm === '') {
     resultContainer.innerHTML = '<p class="message">Ready. Start typing to search...</p>';
     return;
@@ -114,7 +110,8 @@ function updateQueryResult() {
   if (savedCategories.size === 0) {
     queryResult.value = queryResultEmptyMessage;
   } else {
-    const longQuery = `https://wiki.project-tamriel.com/w/index.php?search=+${appendedCategories()}&title=Special%3ASearch&profile=all&fulltext=1`
+    //&ns6=1 is just files
+    const longQuery = `https://wiki.project-tamriel.com/w/index.php?search=+${appendedCategories()}&title=Special%3ASearch&profile=advanced&fulltext=1&ns6=1`
     queryResultHolder = longQuery
     queryResult.value = longQuery;
   }
@@ -190,7 +187,7 @@ addEventListener("load", () => {
   const searchInputElement = document.getElementById(searchInput)!;
   const resultContainerElement = document.getElementById(resultContainer)!;
   const savedListContainerElement = document.getElementById(savedListContainer)!;
-  loadCategoryData(searchInputElement as HTMLInputElement, resultContainerElement);
+  setupSearch(searchInputElement as HTMLInputElement, resultContainerElement);
   searchInputElement.addEventListener('input', (event) => { handleSearch(event, resultContainerElement, savedListContainerElement) });
 })
 
