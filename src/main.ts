@@ -123,7 +123,7 @@ function updateQueryResult() {
 function setupCopyURL(element: HTMLButtonElement) {
   element.addEventListener('click', () => {
     const queryResult = document.getElementById(queryResultElement) as HTMLInputElement;
-    if (queryResultHolder == queryResultEmptyMessage || queryResultHolder == '') {
+    if (queryResultHolder == '') {
       queryResult.value = 'There is nothing to copy, add categories first.';
     } else {
       navigator.clipboard.writeText(queryResultHolder);
@@ -134,7 +134,6 @@ function setupCopyURL(element: HTMLButtonElement) {
 
 let copycounter: number = 0;
 function copyResultMessageCreator(){
-  console.log(copycounter)
   let copyMessage = "Copied"
   if(copycounter >= 1 && copycounter < 5){    
     copyMessage = "Copied again!"
