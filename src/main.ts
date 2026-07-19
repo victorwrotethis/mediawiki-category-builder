@@ -108,12 +108,14 @@ function deleteCategory(emptyListMsg: HTMLElement, element: HTMLElement, categor
 
 const queryResultElement = 'query-result';
 const queryResultEmptyMessage = 'Start adding categories to view the result URL';
+let queryResultHolder = '';
 function updateQueryResult() {
   const queryResult = document.getElementById(queryResultElement) as HTMLInputElement;
   if (savedCategories.size === 0) {
     queryResult.value = queryResultEmptyMessage;
   } else {
     const longQuery = `https://wiki.project-tamriel.com/w/index.php?search=+${appendedCategories()}&title=Special%3ASearch&profile=all&fulltext=1`
+    queryResultHolder = longQuery
     queryResult.value = longQuery;
   }
 }
@@ -121,13 +123,26 @@ function updateQueryResult() {
 function setupCopyURL(element: HTMLButtonElement) {
   element.addEventListener('click', () => {
     const queryResult = document.getElementById(queryResultElement) as HTMLInputElement;
-    if (queryResult.value == queryResultEmptyMessage || queryResult.value == '') {
+    if (queryResultHolder == queryResultEmptyMessage || queryResultHolder == '') {
       queryResult.value = 'There is nothing to copy, add categories first.';
     } else {
-      navigator.clipboard.writeText(queryResult.value);
-      queryResult.value = "Copied!";
+      navigator.clipboard.writeText(queryResultHolder);
+      queryResult.value = copyResultMessageCreator();
     }
   });
+}
+
+let copycounter: number = 0;
+function copyResultMessageCreator(){
+  console.log(copycounter)
+  let copyMessage = "Copied"
+  if(copycounter >= 1 && copycounter < 5){    
+    copyMessage = "Copied again!"
+  } if (copycounter > 5) {
+    copyMessage = `Copy #${copycounter}, you sure you got it this time??`
+  }
+  copycounter = copycounter + 1;
+  return copyMessage  
 }
 
 function appendedCategories() {
@@ -148,7 +163,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
     <h2>Wiki Inputs</h2>
     <div class="search-container" id="query-bit">
-        <button type="button" id="action-button" class="action-btn" onclick="copyURL()">
+        <button type="button" id="action-button" class="action-btn">
             <span>&#128203;</span>
         </button>
         <input type="text" id="query-result" class="query-box"
