@@ -140,7 +140,7 @@ function appendedCategories() {
 }
 
 function createCategoryQuery(categoryName: string) {
-  return `%22%5B%5BCategory%3A${categoryName.replaceAll(" ", "_")}%5D%5D%22+`
+  return `%22%5B%5BCategory%3A${categoryName}%5D%5D%22+`
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
